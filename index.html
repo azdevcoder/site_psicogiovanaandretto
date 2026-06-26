@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giovana Andretto | Psicóloga para Mulheres</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        /* PALETAS DE CORES */
+        .paleta-roxa {
+            --bg-color: #F8F5F2; --text-color: #2D2A32; --primary-color: #5C407C; --secondary-color: #BFA3D4; --accent-color: #8B2E3C; --card-bg: #FFFFFF;
+        }
+        .paleta-rosa {
+            --bg-color: #FFF0F5; --text-color: #4A4A4A; --primary-color: #C25975; --secondary-color: #F8C8D8; --accent-color: #D87093; --card-bg: #FFFFFF;
+        }
+
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--bg-color); color: var(--text-color); margin: 0; padding: 0; line-height: 1.7; font-size: 16px; transition: background-color 0.3s, color 0.3s; }
+        h1, h2, h3, .nav-logo, .quote { font-family: 'Playfair Display', serif; }
+
+        nav { background-color: var(--card-bg); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .nav-logo { font-weight: 700; font-size: 1.4rem; color: var(--primary-color); letter-spacing: 0.5px; }
+        .nav-links a { text-decoration: none; color: var(--text-color); margin-left: 1.5rem; font-weight: 500; font-size: 0.95rem; transition: color 0.3s ease; }
+        .nav-links a:hover { color: var(--accent-color); }
+
+        .hero { display: flex; align-items: center; justify-content: space-between; padding: 6rem 5%; background-color: var(--secondary-color); }
+        .hero-text { max-width: 50%; }
+        .hero-text h1 { font-size: 3.5rem; color: var(--primary-color); margin-bottom: 1rem; line-height: 1.1; font-weight: 700; }
+        .hero-text p { font-size: 1.15rem; margin-bottom: 2.5rem; font-weight: 400; }
+        .btn { background-color: var(--primary-color); color: #fff; padding: 1rem 2rem; text-decoration: none; border-radius: 5px; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: 0.3s; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
+        .btn:hover { background-color: var(--accent-color); }
+        .hero-image { width: 40%; height: 450px; background-color: var(--card-bg); border-radius: 20px; border: 4px solid var(--primary-color); overflow: hidden; }
+        .hero-image img { width: 100%; height: 100%; object-fit: cover; }
+
+        .sobre-container { display: flex; padding: 6rem 5%; gap: 4rem; align-items: center; }
+        .sobre-texto { flex: 1; }
+        .sobre-texto h2 { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1.5rem; font-weight: 600; }
+        .sobre-texto p { font-weight: 300; margin-bottom: 1.2rem; }
+        .sobre-grid { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .card-formacao { background-color: var(--card-bg); padding: 2rem 1.5rem; border-radius: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.04); border-left: 4px solid var(--primary-color); }
+        .card-formacao .icone { font-size: 2rem; color: var(--primary-color); margin-bottom: 0.5rem; }
+        .card-formacao h3 { color: var(--primary-color); font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; }
+
+        .abordagem { background-color: var(--primary-color); color: #fff; padding: 6rem 5%; text-align: center; }
+        .abordagem h2 { font-size: 3rem; margin-bottom: 2rem; font-weight: 600; }
+        .abordagem-content { max-width: 800px; margin: 0 auto; font-size: 1.15rem; font-weight: 300; }
+        .quote { font-style: italic; font-size: 1.8rem; margin-top: 3rem; padding: 2.5rem; border: 2px dashed rgba(255, 255, 255, 0.4); border-radius: 10px; }
+
+        .contato { padding: 6rem 5%; text-align: center; }
+        .contato h2 { color: var(--primary-color); font-size: 2.5rem; margin-bottom: 1rem; }
+        .links-uteis { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; margin-top: 3rem; }
+        .btn-outline { background-color: transparent; color: var(--primary-color); border: 2px solid var(--primary-color); padding: 1rem 2rem; text-decoration: none; border-radius: 5px; font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; transition: 0.3s; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .btn-outline:hover { background-color: var(--primary-color); color: #fff; }
+
+        footer { background-color: var(--text-color); color: #fff; text-align: center; padding: 3rem 2rem; font-weight: 300; font-size: 0.9rem; }
+
+        /* Elementos Adicionais */
+        .floating-buttons { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 15px; z-index: 9999; }
+        .float-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 28px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.3s; }
+        .float-btn:hover { transform: scale(1.1); }
+        .float-wpp { background-color: #25D366; }
+        .float-form { background-color: var(--primary-color); }
+        .btn-toggle { position: fixed; top: 100px; right: 20px; z-index: 9999; background: var(--primary-color); color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; font-size: 0.8rem; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+    </style>
+</head>
+
+<body class="paleta-roxa">
+
+    <button class="btn-toggle" onclick="alternarPaleta()">Alternar Cores</button>
+
+    <div class="floating-buttons">
+        <a href="https://api.whatsapp.com/send/?phone=%2B5544991295286&text=Ol%C3%A1+Giovana%2C+gostaria+de+saber+mais+sobre+os+seus+atedimentos.&type=phone_number&app_absent=0" class="float-btn float-wpp" target="_blank" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScsW3dJFEqjJm3TDKVf-59tHiVGQgihsDTZ1VwP-PEvvRqITg/viewform" class="float-btn float-form" target="_blank" title="Formulário"><i class="bi bi-ui-radios"></i></a>
+    </div>
+
+    <nav>
+        <div class="nav-logo">Giovana Andretto | CRP: 08/45986</div>
+        <div class="nav-links">
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre Mim</a>
+            <a href="#abordagem">Abordagem</a>
+            <a href="#contato">Contato</a>
+        </div>
+    </nav>
+
+    <section id="inicio" class="hero">
+        <div class="hero-text">
+            <h1>Giovana Andretto Camargo</h1>
+            <p><strong>Psicóloga para Mulheres.</strong> Um espaço seguro para promover autonomia, emancipação e cuidado para mulheres sobrecarregadas.</p>
+            <a href="#" class="btn"><i class="bi bi-whatsapp"></i> Agendar Consulta</a>
+        </div>
+        <div class="hero-image">
+            <img src="preferência por essa.jpg" alt="Foto da Psicóloga Giovana Andretto">
+        </div>
+    </section>
+
+    <section id="sobre" class="sobre-container">
+        <div class="sobre-texto">
+            <h2>Prazer, sou a Giovana</h2>
+            <p><strong>Psicóloga para mulheres, por quê?</strong></p>
+            <p>Porque eu acredito em uma prática clínica que promova autonomia e emancipação para mulheres que se sentem sobrecarregadas e estagnadas em suas vidas.</p>
+            <p>Vivemos em uma sociedade que possui altos índices de feminicídio e violência de gênero, e tudo isso impacta de forma negativa na saúde mental das mulheres, sejam elas negras, brancas, indígenas, trans, lésbicas, imigrantes…</p>
+            <p>A psicoterapia vem como um suporte, ou seja, nós duas, juntas, vamos caminhar pelo seu processo de desenvolvimento, sempre olhando e respeitando os seus limites e aprendendo a lidar com os limites impostos pela realidade em que você está inserida, para construirmos caminhos possíveis de cuidado e suporte para além da psicoterapia.</p>
+        </div>
+        
+        <div class="sobre-grid">
+            <div class="card-formacao">
+                <h3><i class="bi bi-mortarboard icone"></i> Graduação</h3>
+                <p>Psicologia pela UniCesumar de Maringá/PR.</p>
+            </div>
+            <div class="card-formacao">
+                <h3><i class="bi bi-book icone"></i> Especialização</h3>
+                <p>Manejo clínico sócio-histórico-cultural pelo Instituto de Psicologia Sócio Histórica.</p>
+            </div>
+            <div class="card-formacao">
+                <h3><i class="bi bi-arrow-repeat icone"></i> Atualização</h3>
+                <p>Atualmente realizando formação pelo Instituto Feminamente.</p>
+            </div>
+            <div class="card-formacao">
+                <h3><i class="bi bi-person-badge icone"></i> Registro</h3>
+                <p>CRP: 08/45986</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="abordagem" class="abordagem">
+        <h2>Psicologia Histórico-Cultural</h2>
+        <div class="abordagem-content">
+            <p>A minha abordagem é a histórico-cultural. Trata-se de uma abordagem com olhar mais crítico e social, que acredita no desenvolvimento do autodomínio da conduta (autonomia) através da tomada de consciência sobre seu meio e sobre si (autoconsciência).</p>
+            <div class="quote">
+                "O cuidado começa quando o indivíduo é desculpabilizado por seu sofrimento psíquico."
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contato">
+        <h2>Vamos conversar?</h2>
+        <p>O primeiro passo pode ser o mais importante da sua jornada.</p>
+        
+        <div class="links-uteis">
+            <a href="https://api.whatsapp.com/send/?phone=%2B5544991295286&text=Ol%C3%A1+Giovana%2C+gostaria+de+saber+mais+sobre+os+seus+atedimentos.&type=phone_number&app_absent=0" class="btn"><i class="bi bi-whatsapp"></i> Agendar pelo WhatsApp</a>
+            <a href="#" class="btn-outline"><i class="bi bi-ui-radios"></i> Preencher Formulário</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>Giovana Andretto Camargo | Psicóloga CRP 08/45986</p>
+        <p>© 2026 Todos os direitos reservados.</p>
+        <p>Maringá - PR</p>
+    </footer>
+
+    <script>
+        function alternarPaleta() {
+            const body = document.body;
+            body.classList.toggle('paleta-roxa');
+            body.classList.toggle('paleta-rosa');
+        }
+    </script>
+</body>
+</html>
