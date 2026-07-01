@@ -387,6 +387,103 @@
     text-decoration: underline;
     opacity: 0.8;
 }
+/* Container principal do menu */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #ffffff; /* Fundo do menu */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sombrinha leve */
+    position: relative; /* Importante para o dropdown mobile */
+    z-index: 1000;
+}
+
+.nav-logo {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Links no Desktop */
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #E2725B; /* Cor terracota ao passar o mouse */
+}
+
+/* Botão Hambúrguer (Escondido no Desktop) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* ------------------------------------------- */
+/* RESPONSIVO (Telas de celular) */
+/* ------------------------------------------- */
+@media (max-width: 768px) {
+    /* Mostra o botão hambúrguer */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Esconde os links jogando eles para o lado esquerdo */
+    .nav-links {
+        position: absolute;
+        top: 100%; /* Cola logo abaixo do menu */
+        left: -100%; /* Joga para fora da tela */
+        width: 100%;
+        background-color: #ffffff;
+        flex-direction: column; /* Deixa em lista vertical */
+        text-align: center;
+        padding: 20px 0;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        transition: left 0.4s ease; /* Animação de deslizar */
+    }
+
+    .nav-links a {
+        padding: 15px;
+        width: 100%;
+        display: block;
+    }
+
+    /* A classe 'active' puxa o menu de volta para a tela */
+    .nav-links.active {
+        left: 0;
+    }
+
+    /* Opcional: Animação transformando o hambúrguer num "X" */
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
     </style>
 </head>
 
@@ -399,16 +496,25 @@
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScsW3dJFEqjJm3TDKVf-59tHiVGQgihsDTZ1VwP-PEvvRqITg/viewform" class="float-btn float-form" target="_blank"><i class="bi bi-ui-radios"></i></a>
     </div>
 
-    <nav>
-        <div class="nav-logo">Giovana Andretto | CRP: 08/45986</div>
-        <div class="nav-links">
-            <a href="#inicio">Início</a>
-            <a href="#sobre">Sobre Mim</a>
-            <a href="#abordagem">Abordagem</a>
-            <a href="#faq">Dúvidas</a>
-            <a href="https://api.whatsapp.com/send/?phone=%2B5544991295286&text=Ol%C3%A1+Giovana%2C+gostaria+de+saber+mais+sobre+os+seus+atedimentos.&type=phone_number&app_absent=0" target="_blank">Contato</a>
-        </div>
-    </nav>
+    <nav class="navbar">
+    <div class="nav-logo">Giovana Andretto | CRP: 08/45986</div>
+    
+    <!-- Botão Hambúrguer (Aparece só no celular) -->
+    <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <!-- Links de Navegação -->
+    <div class="nav-links" id="nav-links">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre Mim</a>
+        <a href="#abordagem">Abordagem</a>
+        <a href="#faq">Dúvidas</a>
+        <a href="https://api.whatsapp.com/send/?phone=%2B5544991295286&text=Ol%C3%A1+Giovana%2C+gostaria+de+saber+mais+sobre+os+seus+atedimentos.&type=phone_number&app_absent=0" target="_blank" class="btn-contato">Contato</a>
+    </div>
+</nav>
 
     <section id="inicio" class="hero">
         <div class="hero-text">
@@ -653,6 +759,22 @@ let tooltipEl;
                 }
             });
         }
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    mobileMenu.addEventListener('click', () => {
+        // Alterna a classe 'active' nos links e no botão
+        navLinks.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+    });
+
+    // Bônus: Fecha o menu automaticamente quando a pessoa clicar em um link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            mobileMenu.classList.remove('active');
+        });
+    });
     </script>
 </body>
 </html>
