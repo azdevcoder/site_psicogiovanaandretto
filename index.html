@@ -4,28 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giovana Andretto | Psicóloga para Mulheres</title>
-    
+    <link rel="icon" type="favicon" href="Poltroninha.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <style>
         /* PALETAS DE CORES */
         .paleta-roxa { --bg-color: #F8F5F2; --text-color: #2D2A32; --primary-color: #5C407C; --secondary-color: #BFA3D4; --accent-color: #8B2E3C; --card-bg: #FFFFFF; }
-        .paleta-rosa { --bg-color: #FFF0F5; --text-color: #4A4A4A; --primary-color: #C25975; --secondary-color: #F8C8D8; --accent-color: #D87093; --card-bg: #FFFFFF; }
-
+        
         body { font-family: 'Montserrat', sans-serif; background-color: var(--bg-color); color: var(--text-color); margin: 0; padding: 0; line-height: 1.7; font-size: 16px; transition: background-color 0.3s, color 0.3s; }
         h1, h2, h3, .nav-logo, .quote { font-family: 'Playfair Display', serif; }
 
         nav { background-color: var(--card-bg); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
         .nav-logo { font-weight: 700; font-size: 1.4rem; color: var(--primary-color); }
         .nav-links a { text-decoration: none; color: var(--text-color); margin-left: 1.5rem; font-weight: 500; font-size: 0.95rem; }
-        
+
         .hero { display: flex; align-items: center; justify-content: space-between; padding: 6rem 5%; background-color: var(--secondary-color); }
         .hero-text { max-width: 50%; }
         .hero-text h1 { font-size: 3.5rem; color: var(--primary-color); margin-bottom: 1rem; line-height: 1.1; }
-        .btn { background-color: var(--primary-color); color: #fff; padding: 1rem 2rem; text-decoration: none; border-radius: 5px; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; text-transform: uppercase; }
+        .hero-text .subtitulo { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.3rem; color: var(--primary-color); margin: 0 0 0.5rem 0; }
+        .hero-text .crp { font-size: 0.9rem; letter-spacing: 0.5px; margin-bottom: 1.5rem; opacity: 0.85; }
+        .btn { background-color: var(--primary-color); color: #fff; padding: 1rem 2rem; text-decoration: none; border-radius: 5px; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; text-transform: uppercase; border: none; cursor: pointer; font-size: 0.95rem; font-family: 'Montserrat', sans-serif; }
         .hero-image { width: 40%; height: 450px; background-color: var(--card-bg); border-radius: 20px; border: 4px solid var(--primary-color); overflow: hidden; }
         .hero-image img { width: 100%; height: 100%; object-fit: cover; }
 
@@ -36,7 +41,25 @@
 
         .abordagem { background-color: var(--primary-color); color: #fff; padding: 6rem 5%; text-align: center; }
         .quote { font-style: italic; font-size: 1.8rem; margin-top: 3rem; padding: 2.5rem; border: 2px dashed rgba(255, 255, 255, 0.4); border-radius: 10px; }
+
+        .formacoes { padding: 6rem 5%; }
+        .formacoes h2 { text-align: center; color: var(--primary-color); margin-bottom: 1rem; }
+        .formacoes-intro { max-width: 700px; margin: 0 auto 3rem auto; text-align: center; }
+
+        /* FAQ ACCORDION */
+        .faq { padding: 6rem 5%; background-color: var(--secondary-color); }
+        .faq h2 { text-align: center; color: var(--primary-color); margin-bottom: 3rem; }
+        .faq-lista { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+        .faq-item { background-color: var(--card-bg); border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .faq-pergunta { width: 100%; background: none; border: none; text-align: left; padding: 1.5rem 2rem; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.05rem; color: var(--text-color); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+        .faq-pergunta .bi { color: var(--primary-color); font-size: 1.3rem; transition: transform 0.3s ease; flex-shrink: 0; }
+        .faq-item.ativo .faq-pergunta .bi { transform: rotate(45deg); }
+        .faq-resposta { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; padding: 0 2rem; }
+        .faq-item.ativo .faq-resposta { max-height: 300px; padding: 0 2rem 1.5rem 2rem; }
+        .faq-resposta p { margin: 0; opacity: 0.9; }
+
         .contato { padding: 6rem 5%; text-align: center; }
+        .contato p { max-width: 700px; margin-left: auto; margin-right: auto; }
         .links-uteis { display: flex; justify-content: center; gap: 1.5rem; margin-top: 3rem; flex-wrap: wrap; }
         .btn-outline { background-color: transparent; color: var(--primary-color); border: 2px solid var(--primary-color); padding: 1rem 2rem; text-decoration: none; border-radius: 5px; font-weight: 600; text-transform: uppercase; }
 
@@ -46,7 +69,9 @@
         .floating-buttons { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 15px; z-index: 9999; }
         .float-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 28px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
         .float-wpp { background-color: #25D366; }
+        .float-wpp:hover { background-color: #1DA851; color: #fff; }
         .float-form { background-color: var(--primary-color); }
+        .float-form:hover { background-color: #38274d; color: #fff; }
         .btn-toggle { position: fixed; top: 80px; right: 20px; z-index: 9999; background: var(--primary-color); color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; }
 
         /* RESPONSIVIDADE */
@@ -61,13 +86,313 @@
             .nav-links { display: none; }
             .hero { padding: 3rem 5%; }
             .hero-text h1 { font-size: 2rem; }
+            .faq-pergunta { padding: 1.2rem 1.5rem; font-size: 0.95rem; }
         }
+        /* Estilo do Balãozinho JS */
+        .custom-tooltip {
+            position: absolute;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 10000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            white-space: nowrap;
+        }
+
+        /* Setinha do balão */
+        .custom-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 6px;
+            border-style: solid;
+            border-color: var(--primary-color) transparent transparent transparent;
+        }
+
+        .custom-tooltip.show {
+            opacity: 1;
+        }
+        /* Estilo para a imagem na seção sobre */
+        .sobre-imagem {
+            flex: 1; /* Faz a imagem ocupar o mesmo espaço de largura que o texto */
+            border-radius: 15px; 
+            overflow: hidden; 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* Sombra sutil igual aos cards */
+            border: 4px solid var(--primary-color); /* Borda opcional acompanhando a paleta */
+        }
+
+        .sobre-imagem img {
+            width: 100%;
+            height: auto;
+            display: flex;
+            object-fit: cover; 
+        }
+        .social-icons { margin-top: 10px; }
+        .social-icons a {
+        color: var(--terracotta);
+        font-size: 22px;
+        margin: 0 10px;
+        transition: all 0.3s ease;
+        }
+        .social-icons a:hover { color: #fff; transform: scale(1.2); }
+        /* Estilos Gerais do Footer (conforme imagem) */
+.site-footer {
+    background-color: #5C407C; /* Cor de fundo suave off-white */
+    color: #ffffff;
+    padding: 60px 0 20px;
+    font-family: 'Montserrat', sans-serif; /* Usando Montserrat */
+    font-size: 0.95rem;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Para responsividade */
+    gap: 30px;
+}
+
+/* Estilo das Colunas */
+.footer-column {
+    flex: 1;
+    color: #ffffff;
+    min-width: 250px;
+}
+
+.footer-column h3 {
+    font-family: 'Playfair Display', serif; /* Títulos em Playfair */
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.footer-column p {
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+.professional-name {
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+.occupation {
+    font-style: italic;
+    color: #fdfdfd;
+}
+
+.crp a, .email-link a {
+    color: inherit;
+    text-decoration: underline;
+    transition: opacity 0.3s;
+}
+
+.crp a:hover, .email-link a:hover {
+    opacity: 0.7;
+}
+
+/* Estilo dos Ícones de Ação */
+.icon-group {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    margin-top: 15px;
+    
+}
+
+.icon-group a {
+    color: #ffffff;
+    font-size: 2rem; /* Ícones maiores e mais nítidos */
+    transition: color 0.3s, transform 0.3s;
+}
+
+.icon-group a:hover {
+    color: #E2725B; /* Terracota no hover */
+    transform: translateY(-3px);
+}
+
+/* Destaque especial para o ícone do Gmail (conforme imagem) */
+.highlight-icon {
+    position: relative;
+}
+
+.highlight-icon i {
+    color: #ffffff; /* Terracota base */
+}
+
+/* Faixa Inferior */
+.footer-bottom {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #D1D1D1;
+    font-size: 0.85rem;
+    color: #ffffff;
+}
+
+.footer-bottom .footer-container {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dev-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: opacity 0.3s;
+}
+
+.dev-link:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+/* Responsividade para Telas Pequenas */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-column {
+        width: 100%;
+    }
+
+    .icon-group {
+        justify-content: center;
+        color: #ffffff;
+    }
+
+    .footer-bottom .footer-container {
+        flex-direction: column;
+        color: #ffffff;
+        gap: 10px;
+    }
+}
+/* Seção Base */
+.formacoes {
+    padding: 60px 20px;
+    background-color: #ffffff; /* Fundo limpo */
+    text-align: center;
+}
+
+.formacoes h2 {
+    font-family: 'Playfair Display', serif;
+    color: #4A4A4A;
+    margin-bottom: 20px;
+}
+
+.formacoes-intro {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Grid Responsivo para os Cards */
+.sobre-grid {
+    display: grid;
+    /* Cria colunas automáticas que não ficam menores que 250px */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* O Card Base */
+.card-formacao {
+    background: #FDFBF9; /* Cor off-white suave */
+    padding: 30px 20px;
+    border-radius: 12px;
+    border: 1px solid #EAEAEA;
+    transition: all 0.4s ease; /* Esta linha é o segredo da animação suave */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* O Efeito Hover (Dinâmico) */
+.card-formacao:hover {
+    transform: translateY(-10px); /* Faz o card subir 10px */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08); /* Cria uma sombra suave embaixo */
+    border-color: #5C407C; /* Borda muda para o tom terracota */
+}
+
+/* Estilização dos Ícones */
+.icone-wrapper {
+    background-color: #FFF2EF; /* Fundo suave para o ícone */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    transition: all 0.4s ease;
+}
+
+.icone {
+    font-size: 1.8rem;
+    color: #5C407C; /* Cor base do ícone */
+    transition: transform 0.4s ease;
+}
+
+/* Animação extra no ícone quando passa o mouse no card */
+.card-formacao:hover .icone-wrapper {
+    background-color: #5C407C;
+}
+
+.card-formacao:hover .icone {
+    color: #ffffff; /* Ícone fica branco */
+    transform: scale(1.1); /* Ícone cresce um pouquinho */
+}
+
+/* Títulos e Textos dos Cards */
+.card-formacao h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card-formacao p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Ajuste do Link CRP */
+.crp a {
+    color: #5C407C;
+    text-decoration: none;
+    font-weight: bold;
+    transition: opacity 0.3s;
+}
+
+.crp a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
     </style>
 </head>
 
 <body class="paleta-roxa">
 
-    <button class="btn-toggle" onclick="alternarPaleta()">Alternar Cores</button>
+    <!--<button class="btn-toggle" onclick="alternarPaleta()">Alternar Cores</button> -->
 
     <div class="floating-buttons">
         <a href="https://api.whatsapp.com/send/?phone=%2B5544991295286&text=Ol%C3%A1+Giovana%2C+gostaria+de+saber+mais+sobre+os+seus+atedimentos.&type=phone_number&app_absent=0" class="float-btn float-wpp" target="_blank"><i class="bi bi-whatsapp"></i></a>
@@ -80,15 +405,20 @@
             <a href="#inicio">Início</a>
             <a href="#sobre">Sobre Mim</a>
             <a href="#abordagem">Abordagem</a>
-            <a href="#contato">Contato</a>
+            <a href="#faq">Dúvidas</a>
+            <a href="https://api.whatsapp.com/send/?phone=%2B5544991295286&text=Ol%C3%A1+Giovana%2C+gostaria+de+saber+mais+sobre+os+seus+atedimentos.&type=phone_number&app_absent=0" target="_blank">Contato</a>
         </div>
     </nav>
 
     <section id="inicio" class="hero">
         <div class="hero-text">
             <h1>Giovana Andretto Camargo</h1>
-            <p><strong>Psicóloga para Mulheres.</strong> Um espaço seguro para promover autonomia, emancipação e cuidado para mulheres sobrecarregadas.</p>
-            <a href="#" class="btn"><i class="bi bi-whatsapp"></i> Agendar Consulta</a>
+            <p class="subtitulo">Psicóloga para Mulheres</p>
+            <p class="crp">
+            <a href="https://cadastro.cfp.org.br/visualizar.html?profissional=IrW31Pi5f2mBhBVdYEThYZE%2BXUewgKfSVijEOlYJjns%3D" target="_blank" id="crp-link" style="color: inherit; text-decoration: underline;">CRP: 08/45986</a>
+            </p>
+            <p>Um espaço seguro para promover autonomia, emancipação e cuidado para mulheres sobrecarregadas.</p>
+            <a href="https://api.whatsapp.com/send/?phone=%2B5544991295286&text=Ol%C3%A1+Giovana%2C+gostaria+de+saber+mais+sobre+os+seus+atedimentos.&type=phone_number&app_absent=0" class="btn" target="_blank"><i class="bi bi-whatsapp"></i> Agendar Consulta</a>
         </div>
         <div class="hero-image">
             <img src="preferência por essa.jpg" alt="Foto da Psicóloga Giovana Andretto">
@@ -96,20 +426,19 @@
     </section>
 
     <section id="sobre" class="sobre-container">
-        <div class="sobre-texto">
-            <h2>Prazer, sou a Giovana</h2>
-            <p><strong>Psicóloga para mulheres, por quê?</strong></p>
-            <p>Porque eu acredito em uma prática clínica que promova autonomia e emancipação para mulheres que se sentem sobrecarregadas e estagnadas em suas vidas.</p>
-            <p>Vivemos em uma sociedade que possui altos índices de feminicídio e violência de gênero, e tudo isso impacta de forma negativa na saúde mental das mulheres, sejam elas negras, brancas, indígenas, trans, lésbicas, imigrantes…</p>
-            <p>A psicoterapia vem como um suporte, ou seja, nós duas, juntas, vamos caminhar pelo seu processo de desenvolvimento, sempre olhando e respeitando os seus limites e aprendendo a lidar com os limites impostos pela realidade em que você está inserida, para construirmos caminhos possíveis de cuidado e suporte para além da psicoterapia.</p>
-        </div>
-        <div class="sobre-grid">
-            <div class="card-formacao"><h3><i class="bi bi-mortarboard icone"></i> Graduação</h3><p>Psicologia pela UniCesumar de Maringá/PR.</p></div>
-            <div class="card-formacao"><h3><i class="bi bi-book icone"></i> Especialização</h3><p>Manejo clínico sócio-histórico-cultural pelo Instituto de Psicologia Sócio Histórica.</p></div>
-            <div class="card-formacao"><h3><i class="bi bi-arrow-repeat icone"></i> Atualização</h3><p>Atualmente realizando formação pelo Instituto Feminamente.</p></div>
-            <div class="card-formacao"><h3><i class="bi bi-person-badge icone"></i> Registro</h3><p>CRP: 08/45986</p></div>
-        </div>
-    </section>
+
+<div class="sobre-imagem">
+        <img src="poltroninha.jpg" alt="Foto da poltrona de atendimento">
+    </div>
+
+    <div class="sobre-texto">
+        <h2>Prazer, sou a Giovana</h2>
+        <p><strong>Psicóloga para mulheres, por quê?</strong></p>
+        <p>Porque eu acredito em uma prática clínica que promova autonomia e emancipação para mulheres que se sentem sobrecarregadas e estagnadas em suas vidas.</p>
+        <p>Vivemos em uma sociedade que possui altos índices de feminicídio e violência de gênero, e tudo isso impacta de forma negativa na saúde mental das mulheres, sejam elas negras, brancas, indígenas, trans, lésbicas, imigrantes…</p>
+        <p>A psicoterapia vem como um suporte, ou seja, nós duas, juntas, vamos caminhar pelo seu processo de desenvolvimento, sempre olhando e respeitando os seus limites e aprendendo a lidar com os limites impostos pela realidade em que você está inserida, para construirmos caminhos possíveis de cuidado e suporte para além da psicoterapia.</p>
+    </div>
+</section>
 
     <section id="abordagem" class="abordagem">
         <h2>Psicologia Histórico-Cultural</h2>
@@ -119,26 +448,210 @@
         </div>
     </section>
 
-    <section id="contato" class="contato">
+    <section id="formacoes" class="formacoes">
+    <h2>Minhas Formações</h2>
+    
+    <div class="formacoes-intro">
+        <p>Eu me graduei em psicologia pela UniCesumar de Maringá/PR. Além disso, terminei uma formação em manejo clínico sócio-histórico-cultural, pelo Instituto de Psicologia Sócio Histórica (IPSH).</p>
+        <p>Atualmente estou realizando uma formação pelo Instituto Feminamente, para poder me aperfeiçoar no atendimento às mulheres.</p>
+        <p>Sempre estou buscando mais conhecimento para poder oferecer o melhor às minhas pacientes!</p>
+    </div>
+    
+    <div class="sobre-grid">
+        <div class="card-formacao">
+            <div class="icone-wrapper">
+                <i class="bi bi-mortarboard icone"></i>
+            </div>
+            <h3>Graduação</h3>
+            <p>Psicologia pela UniCesumar de Maringá/PR.</p>
+        </div>
+        
+        <div class="card-formacao">
+            <div class="icone-wrapper">
+                <i class="bi bi-book icone"></i>
+            </div>
+            <h3>Especialização</h3>
+            <p>Manejo clínico sócio-histórico-cultural pelo Instituto de Psicologia Sócio Histórica (IPSH).</p>
+        </div>
+        
+        <div class="card-formacao">
+            <div class="icone-wrapper">
+                <i class="bi bi-arrow-repeat icone"></i>
+            </div>
+            <h3>Em andamento</h3>
+            <p>Formação pelo Instituto Feminamente, com foco no atendimento às mulheres.</p>
+        </div>
+        
+        <div class="card-formacao">
+            <div class="icone-wrapper">
+                <i class="bi bi-person-badge icone"></i>
+            </div>
+            <h3>Registro</h3>
+            <p class="crp">
+                <a href="https://cadastro.cfp.org.br/visualizar.html?profissional=IrW31Pi5f2mBhBVdYEThYZE%2BXUewgKfSVijEOlYJjns%3D" target="_blank" id="crp-link">CRP: 08/45986</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+    <section id="faq" class="faq">
+        <h2>Dúvidas Frequentes</h2>
+        <div class="faq-lista">
+            <div class="faq-item">
+                <button class="faq-pergunta" onclick="alternarFaq(this)">
+                    Qual é a duração das sessões?
+                    <i class="bi bi-plus"></i>
+                </button>
+                <div class="faq-resposta">
+                    <p>As sessões têm em média 50 minutos de duração.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-pergunta" onclick="alternarFaq(this)">
+                    Qual é a frequência dos atendimentos?
+                    <i class="bi bi-plus"></i>
+                </button>
+                <div class="faq-resposta">
+                    <p>O mais indicado é a frequência semanal, mas essa questão pode ser analisada entre paciente e psicóloga, podendo ser também quinzenal.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-pergunta" onclick="alternarFaq(this)">
+                    Qual é a faixa etária que eu atendo?
+                    <i class="bi bi-plus"></i>
+                </button>
+                <div class="faq-resposta">
+                    <p>Eu atendo mulheres acima dos 18 anos, sejam jovens, adultas ou idosas.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-pergunta" onclick="alternarFaq(this)">
+                    Qual é o formato dos meus atendimentos?
+                    <i class="bi bi-plus"></i>
+                </button>
+                <div class="faq-resposta">
+                    <p>Atendo on-line para qualquer lugar do Brasil, e presencialmente em Maringá-PR.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="sobre" class="sobre-container">
+
+<div class="sobre-imagem">
+        <img src="sofa.jpg" alt="Foto da poltrona de atendimento">
+    </div>
+
+    <div class="sobre-texto">
         <h2>Vamos conversar?</h2>
-        <p>O primeiro passo pode ser o mais importante da sua jornada.</p>
+        <p>Se você ainda tem alguma dúvida, pode entrar em contato comigo através do WhatsApp, podemos agendar uma pequena reunião de uns 15 minutos, sem custo, para nos conhecermos um pouco e vermos juntas se faz sentido iniciar o processo. Se não quiser, podemos conversar por mensagem também, sem problemas!</p>
+        <p>E se você já tem mais certeza sobre o início do processo, você pode preencher o formulário de interesse, que eu te chamo para conversarmos e agendarmos nossa primeira sessão!</p>
+        <p>De qualquer forma, estarei à disposição e vou te receber com todo prazer e carinho! Aguardo você <i class="bi bi-heart-fill" style="color: var(--accent-color);"></i></p>
         <div class="links-uteis">
             <a href="https://api.whatsapp.com/send/?phone=%2B5544991295286&text=Ol%C3%A1+Giovana%2C+gostaria+de+saber+mais+sobre+os+seus+atedimentos.&type=phone_number&app_absent=0" class="btn"><i class="bi bi-whatsapp"></i> Agendar pelo WhatsApp</a>
-            <a href="#" class="btn-outline"><i class="bi bi-ui-radios"></i> Preencher Formulário</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScsW3dJFEqjJm3TDKVf-59tHiVGQgihsDTZ1VwP-PEvvRqITg/viewform" class="btn-outline" target="_blank"><i class="bi bi-ui-radios"></i> Preencher Formulário</a>
         </div>
     </section>
 
-    <footer>
-        <p>Giovana Andretto Camargo | Psicóloga CRP 08/45986</p>
-        <p>© 2026 Todos os direitos reservados.</p>
-        <p>Maringá - PR</p>
-    </footer>
+    <footer class="site-footer">
+    <div class="footer-container">
+        
+        <!-- Coluna 1: Informações Profissionais -->
+        <div class="footer-column professional-info">
+            <h3></h3>
+            <p class="professional-name">Giovana Andretto Camargo</p>
+            <p class="occupation">Psicóloga</p>
+            <p class="crp">
+                <a href="https://cadastro.cfp.org.br/visualizar.html?profissional=IrW31Pi5f2mBhBVdYEThYZE%2BXUewgKfSVijEOlYJjns%3D" target="_blank">
+                    CRP: 08/45986
+                </a>
+            </p>
+        </div>
+
+        <!-- Coluna 2: Contatos -->
+        <div class="footer-column contact-info">
+            <h3></h3>
+            <p>Maringá - PR</p>
+            <!-- Link do Gmail trocado -->
+            <p class="email-link">
+                <a href="mailto:giovanaandretto.psi@gmail.com">
+                    giovanaandretto.psi@gmail.com
+                </a>
+            </p>
+        </div>
+
+        <!-- Coluna 3: Ícones de Ação -->
+        <div class="footer-column action-links">
+            <h3></h3>
+            <div class="icon-group">
+                <!-- Instagram (Inalterado) -->
+                <a href="https://www.instagram.com/giovanaandretto.psico?igsh=MXFuZGwwcjd5a2Zmag==" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <!-- Gmail (Substituindo o Forms) -->
+                <a href="mailto:giovanaandretto.psi@gmail.com" aria-label="Enviar E-mail" class="highlight-icon">
+                    <i class="fas fa-envelope"></i>
+                </a>
+
+                <!-- WhatsApp (Substituindo o Linkedin) -->
+                <!-- INSIRA O SEU LINK DO WHATSAPP ABAIXO -->
+                <a href="https://api.whatsapp.com/send/?phone=%2B5544991295286&text=Ol%C3%A1+Giovana%2C+gostaria+de+saber+mais+sobre+os+seus+atedimentos.&type=phone_number&app_absent=0" target="_blank" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Faixa Inferior: Direitos e Créditos -->
+    <div class="footer-bottom">
+        <div class="footer-container">
+            <p>&copy; 2026 Todos os direitos reservados.</p>
+            <p>Desenvolvido por <a href="https://azdevcoder.com.br" target="_blank" class="dev-link">AzDev Coder</a></p>
+        </div>
+    </div>
+</footer>
 
     <script>
-        function alternarPaleta() {
-            const body = document.body;
-            body.classList.toggle('paleta-roxa');
-            body.classList.toggle('paleta-rosa');
+
+        function alternarFaq(botao) {
+            const item = botao.closest('.faq-item');
+            const jaAtivo = item.classList.contains('ativo');
+
+            document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('ativo'));
+
+            if (!jaAtivo) {
+                item.classList.add('ativo');
+            }
+        }
+        const crpLink = document.querySelector('#crp-link');
+let tooltipEl;
+
+        if (crpLink) {
+            crpLink.addEventListener('mouseenter', function() {
+                // Cria o balãozinho
+                tooltipEl = document.createElement('div');
+                tooltipEl.className = 'custom-tooltip';
+                tooltipEl.innerText = 'Clique para Consultar CRP-PR';
+                document.body.appendChild(tooltipEl);
+
+                // Calcula a posição
+                const rect = crpLink.getBoundingClientRect();
+                const top = rect.top + window.scrollY - tooltipEl.offsetHeight - 10;
+                const left = rect.left + window.scrollX + (rect.width / 2) - (tooltipEl.offsetWidth / 2);
+
+                // Aplica a posição
+                tooltipEl.style.top = top + 'px';
+                tooltipEl.style.left = left + 'px';
+                
+                // Timeout pequeno para a transição do CSS funcionar (fade in)
+                setTimeout(() => tooltipEl.classList.add('show'), 10);
+            });
+
+            crpLink.addEventListener('mouseleave', function() {
+                if (tooltipEl) {
+                    tooltipEl.remove();
+                }
+            });
         }
     </script>
 </body>
