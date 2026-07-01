@@ -1,0 +1,495 @@
+        /* PALETAS DE CORES */        
+        .paleta-roxa { --bg-color: #F8F5F2; --text-color: #2D2A32; --primary-color: #5C407C; --secondary-color: #BFA3D4; --accent-color: #8B2E3C; --card-bg: #FFFFFF; }
+        
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--bg-color); color: var(--text-color); margin: 0; padding: 0; line-height: 1.7; font-size: 16px; transition: background-color 0.3s, color 0.3s; }
+        h1, h2, h3, .nav-logo, .quote { font-family: 'Playfair Display', serif; }
+
+        nav { background-color: var(--card-bg); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .nav-logo { font-weight: 700; font-size: 1.4rem; color: var(--primary-color); }
+        .nav-links a { text-decoration: none; color: var(--text-color); margin-left: 1.5rem; font-weight: 500; font-size: 0.95rem; }
+
+        .hero { display: flex; align-items: center; justify-content: space-between; padding: 6rem 5%; background-color: var(--secondary-color); }
+        .hero-text { max-width: 50%; }
+        .hero-text h1 { font-size: 3.5rem; color: var(--primary-color); margin-bottom: 1rem; line-height: 1.1; }
+        .hero-text .subtitulo { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.3rem; color: var(--primary-color); margin: 0 0 0.5rem 0; }
+        .hero-text .crp { font-size: 0.9rem; letter-spacing: 0.5px; margin-bottom: 1.5rem; opacity: 0.85; }
+        .btn { background-color: var(--primary-color); color: #fff; padding: 1rem 2rem; text-decoration: none; border-radius: 5px; font-weight: 600; display: flex; align-items: center; gap: 0.5rem; text-transform: uppercase; border: none; cursor: pointer; font-size: 0.95rem; font-family: 'Montserrat', sans-serif; display: flex; /* Muda de inline-flex para flex */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    width: max-content; /* Garante que o botão não estique */ }
+        .hero-image { width: 40%; height: 450px; background-color: var(--card-bg); border-radius: 20px; border: 4px solid var(--primary-color); overflow: hidden; }
+        .hero-image img { width: 100%; height: 100%; object-fit: cover; }
+
+        .sobre-container { display: flex; padding: 6rem 5%; gap: 4rem; align-items: center; }
+        .sobre-texto { flex: 1; }
+        .sobre-grid { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .card-formacao { background-color: var(--card-bg); padding: 2rem 1.5rem; border-radius: 10px; border-left: 4px solid var(--primary-color); }
+
+        .abordagem { background-color: var(--primary-color); color: #fff; padding: 6rem 5%; text-align: justify; }
+        .quote { font-style: italic; font-size: 1.8rem; margin-top: 3rem; padding: 2.5rem; border: 2px dashed rgba(255, 255, 255, 0.4); border-radius: 10px; }
+
+        .formacoes { padding: 6rem 5%; }
+        .formacoes h2 { text-align: center; color: var(--primary-color); margin-bottom: 1rem; }
+        .formacoes-intro { max-width: 700px; margin: 0 auto 3rem auto; text-align: center; }
+
+        /* FAQ ACCORDION */
+        .faq { padding: 6rem 5%; background-color: var(--secondary-color); }
+        .faq h2 { text-align: center; color: var(--primary-color); margin-bottom: 3rem; }
+        .faq-lista { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+        .faq-item { background-color: var(--card-bg); border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .faq-pergunta { width: 100%; background: none; border: none; text-align: left; padding: 1.5rem 2rem; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.05rem; color: var(--text-color); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+        .faq-pergunta .bi { color: var(--primary-color); font-size: 1.3rem; transition: transform 0.3s ease; flex-shrink: 0; }
+        .faq-item.ativo .faq-pergunta .bi { transform: rotate(45deg); }
+        .faq-resposta { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; padding: 0 2rem; }
+        .faq-item.ativo .faq-resposta { max-height: 300px; padding: 0 2rem 1.5rem 2rem; }
+        .faq-resposta p { margin: 0; opacity: 0.9; }
+
+        .contato { padding: 6rem 5%; text-align: center; }
+        .contato p { max-width: 700px; margin-left: auto; margin-right: auto; }
+        .links-uteis { display: flex; justify-content: center; gap: 1.5rem; margin-top: 3rem; flex-wrap: wrap; }
+        .btn-outline { background-color: transparent; color: var(--primary-color); border: 2px solid var(--primary-color); padding: 1rem 2rem; text-decoration: none; border-radius: 5px; font-weight: 600; text-transform: uppercase; }
+
+        footer { background-color: var(--text-color); color: #fff; text-align: center; padding: 3rem 2rem; }
+
+        /* Botões e Interação */
+        .floating-buttons { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 15px; z-index: 9999; }
+        .float-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 28px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        .float-wpp { background-color: #25D366; }
+        .float-wpp:hover { background-color: #1DA851; color: #fff; }
+        .float-form { background-color: var(--primary-color); }
+        .float-form:hover { background-color: #38274d; color: #fff; }
+        .btn-toggle { position: fixed; top: 80px; right: 20px; z-index: 9999; background: var(--primary-color); color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 992px) {
+            .hero, .sobre-container { flex-direction: column; text-align: center; }
+            .hero-text, .hero-image, .sobre-texto, .sobre-grid { max-width: 100%; width: 100%; }
+            .hero-image { height: 300px; margin-top: 2rem; }
+            .hero-text h1 { font-size: 2.5rem; }
+        }
+        @media (max-width: 600px) {
+            .sobre-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .hero { padding: 3rem 5%; }
+            .hero-text h1 { font-size: 2rem; }
+            .faq-pergunta { padding: 1.2rem 1.5rem; font-size: 0.95rem; }
+        }
+        /* Estilo do Balãozinho JS */
+        .custom-tooltip {
+            position: absolute;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 10000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            white-space: nowrap;
+        }
+
+        /* Setinha do balão */
+        .custom-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 6px;
+            border-style: solid;
+            border-color: var(--primary-color) transparent transparent transparent;
+        }
+
+        .custom-tooltip.show {
+            opacity: 1;
+        }
+        /* Estilo para a imagem na seção sobre */
+        .sobre-imagem {
+            flex: 1; /* Faz a imagem ocupar o mesmo espaço de largura que o texto */
+            border-radius: 15px; 
+             
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* Sombra sutil igual aos cards */
+            border: 4px solid var(--primary-color); /* Borda opcional acompanhando a paleta */
+        }
+
+        .sobre-imagem img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover; 
+        }
+        .social-icons { margin-top: 10px; }
+        .social-icons a {
+        color: #ffffff;
+        font-size: 22px;
+        margin: 0 10px;
+        transition: all 0.3s ease;
+        }
+        .social-icons a:hover { color: #ffffff; transform: scale(1.2); }
+        /* Estilos Gerais do Footer (conforme imagem) */
+    .site-footer {
+        background-color: #5C407C; /* Cor de fundo suave off-white */
+        color: #ffffff;
+        padding: 60px 0 20px;
+        font-family: 'Montserrat', sans-serif; /* Usando Montserrat */
+        font-size: 0.95rem;
+    }
+
+    .footer-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap; /* Para responsividade */
+        gap: 30px;
+    }
+
+    /* Estilo das Colunas */
+    .footer-column {
+        flex: 1;
+        color: #ffffff;
+        min-width: 250px;
+    }
+
+    .footer-column h3 {
+        font-family: 'Playfair Display', serif; /* Títulos em Playfair */
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #ffffff;
+    }
+
+    .footer-column p {
+        margin: 8px 0;
+        line-height: 1.6;
+    }
+
+    .professional-name {
+        font-weight: 600;
+        color: #ffffff;
+        font-size: 1.1rem;
+    }
+
+    .occupation {
+        font-style: italic;
+        color: #fdfdfd;
+    }
+
+    .crp a, .email-link a {
+        color: inherit;
+        text-decoration: underline;
+        transition: opacity 0.3s;
+    }
+
+    .crp a:hover, .email-link a:hover {
+        opacity: 0.5;
+    }
+
+    /* Estilo dos Ícones de Ação */
+    .icon-group {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+        margin-top: 15px;
+        
+    }
+
+    .icon-group a {
+        color: #ffffff;
+        font-size: 2rem; /* Ícones maiores e mais nítidos */
+        transition: color 0.3s, transform 0.3s;
+    }
+
+    .icon-group a:hover {
+        color: #a874e4; /*  hover */
+        transform: translateY(-3px);
+    }
+
+    /* Destaque especial para o ícone do Gmail (conforme imagem) */
+    .highlight-icon {
+        position: relative;
+    }
+
+    .highlight-icon i {
+        color: #ffffff; 
+    }
+
+    .highlight-icon i:hover {
+        color: #a874e4; 
+    }
+
+    /* Faixa Inferior */
+    .footer-bottom {
+        margin-top: 50px;
+        padding-top: 20px;
+        border-top: 1px solid #D1D1D1;
+        font-size: 0.85rem;
+        color: #ffffff;
+    }
+
+    .footer-bottom .footer-container {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .dev-link {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: opacity 0.3s;
+    }
+
+    .dev-link:hover {
+        opacity: 0.8;
+        color:#a874e4
+    }
+
+/* Responsividade para Telas Pequenas */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-column {
+        width: 100%;
+    }
+
+    .icon-group {
+        justify-content: center;
+        color: #ffffff;
+    }
+
+    .footer-bottom .footer-container {
+        flex-direction: column;
+        color: #ffffff;
+        gap: 10px;
+    }
+}
+    /* Seção Base */
+    .formacoes {
+        padding: 60px 20px;
+        background-color: #ffffff; /* Fundo limpo */
+        text-align: center;
+    }
+
+    .formacoes h2 {
+        font-family: 'Playfair Display', serif;
+        color: #4A4A4A;
+        margin-bottom: 20px;
+    }
+
+    .formacoes-intro {
+        max-width: 800px;
+        margin: 0 auto 40px auto;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    /* Grid Responsivo para os Cards */
+    .sobre-grid {
+        display: grid;
+        /* Cria colunas automáticas que não ficam menores que 250px */
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 30px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    /* O Card Base */
+    .card-formacao {
+        background: #FDFBF9; /* Cor off-white suave */
+        padding: 30px 20px;
+        border-radius: 12px;
+        border: 1px solid #EAEAEA;
+        transition: all 0.4s ease; /* Esta linha é o segredo da animação suave */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* O Efeito Hover (Dinâmico) */
+    .card-formacao:hover {
+        transform: translateY(-10px); /* Faz o card subir 10px */
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08); /* Cria uma sombra suave embaixo */
+        border-color: #5C407C; /* Borda muda para o tom terracota */
+    }
+
+    /* Estilização dos Ícones */
+    .icone-wrapper {
+        background-color: #FFF2EF; /* Fundo suave para o ícone */
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+        transition: all 0.4s ease;
+    }
+
+    .icone {
+        font-size: 1.8rem;
+        color: #5C407C; /* Cor base do ícone */
+        transition: transform 0.4s ease;
+    }
+
+    /* Animação extra no ícone quando passa o mouse no card */
+    .card-formacao:hover .icone-wrapper {
+        background-color: #5C407C;
+    }
+
+    .card-formacao:hover .icone {
+        color: #ffffff; /* Ícone fica branco */
+        transform: scale(1.1); /* Ícone cresce um pouquinho */
+    }
+
+    /* Títulos e Textos dos Cards */
+    .card-formacao h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .card-formacao p {
+        font-size: 0.9rem;
+        color: #666;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    /* Ajuste do Link CRP */
+    .crp a {
+        color: #5C407C;
+        text-decoration: none;
+        font-weight: bold;
+        transition: opacity 0.3s;
+    }
+            
+    .crp1 a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: opacity 0.3s;
+    }
+
+    .crp a:hover {
+        text-decoration: underline;
+        opacity: 0.8;
+    }
+
+    .crp1 a:hover {
+        text-decoration: underline;
+        opacity: 0.8;
+    }
+    /* Container principal do menu */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        background-color: #ffffff; /* Fundo do menu */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sombrinha leve */
+        position: relative; /* Importante para o dropdown mobile */
+        z-index: 1000;
+    }
+
+    .nav-logo {
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: #333;
+    }
+
+    /* Links no Desktop */
+    .nav-links {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #555;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: #E2725B; /* Cor terracota ao passar o mouse */
+    }
+
+    /* Botão Hambúrguer (Escondido no Desktop) */
+    .menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+    }
+
+    .menu-toggle .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+
+    .poltroninha { 
+        width: 15%;
+        display: block;
+        margin: 0 auto 20px auto; /* O '20px' dá um respiro entre a imagem e o título */
+        max-width: 150px; /* Opcional: Ajuste este valor para controlar o tamanho máximo da imagem */
+        
+    }
+
+/* ------------------------------------------- */
+/* RESPONSIVO (Telas de celular) */
+/* ------------------------------------------- */
+@media (max-width: 768px) {
+    /* Mostra o botão hambúrguer */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Esconde os links jogando eles para o lado esquerdo */
+    .nav-links {
+        position: absolute;
+        top: 100%; /* Cola logo abaixo do menu */
+        left: -100%; /* Joga para fora da tela */
+        width: 100%;
+        background-color: #ffffff;
+        flex-direction: column; /* Deixa em lista vertical */
+        text-align: center;
+        padding: 20px 0;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        transition: left 0.4s ease; /* Animação de deslizar */
+    }
+
+    .nav-links a {
+        padding: 15px;
+        width: 100%;
+        display: block;
+    }
+
+    /* A classe 'active' puxa o menu de volta para a tela */
+    .nav-links.active {
+        left: 0;
+    }
+
+    /* Opcional: Animação transformando o hambúrguer num "X" */
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
