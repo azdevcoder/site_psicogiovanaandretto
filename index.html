@@ -123,7 +123,7 @@
         .sobre-imagem {
             flex: 1; /* Faz a imagem ocupar o mesmo espaço de largura que o texto */
             border-radius: 15px; 
-            overflow: hidden; 
+             
             box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* Sombra sutil igual aos cards */
             border: 4px solid var(--primary-color); /* Borda opcional acompanhando a paleta */
         }
@@ -131,7 +131,7 @@
         .sobre-imagem img {
             width: 100%;
             height: auto;
-            display: flex;
+            display: block;
             object-fit: cover; 
         }
         .social-icons { margin-top: 10px; }
@@ -143,120 +143,124 @@
         }
         .social-icons a:hover { color: #ffffff; transform: scale(1.2); }
         /* Estilos Gerais do Footer (conforme imagem) */
-.site-footer {
-    background-color: #5C407C; /* Cor de fundo suave off-white */
-    color: #ffffff;
-    padding: 60px 0 20px;
-    font-family: 'Montserrat', sans-serif; /* Usando Montserrat */
-    font-size: 0.95rem;
-}
+    .site-footer {
+        background-color: #5C407C; /* Cor de fundo suave off-white */
+        color: #ffffff;
+        padding: 60px 0 20px;
+        font-family: 'Montserrat', sans-serif; /* Usando Montserrat */
+        font-size: 0.95rem;
+    }
 
-.footer-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap; /* Para responsividade */
-    gap: 30px;
-}
+    .footer-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap; /* Para responsividade */
+        gap: 30px;
+    }
 
-/* Estilo das Colunas */
-.footer-column {
-    flex: 1;
-    color: #ffffff;
-    min-width: 250px;
-}
+    /* Estilo das Colunas */
+    .footer-column {
+        flex: 1;
+        color: #ffffff;
+        min-width: 250px;
+    }
 
-.footer-column h3 {
-    font-family: 'Playfair Display', serif; /* Títulos em Playfair */
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: #ffffff;
-}
+    .footer-column h3 {
+        font-family: 'Playfair Display', serif; /* Títulos em Playfair */
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #ffffff;
+    }
 
-.footer-column p {
-    margin: 8px 0;
-    line-height: 1.6;
-}
+    .footer-column p {
+        margin: 8px 0;
+        line-height: 1.6;
+    }
 
-.professional-name {
-    font-weight: 600;
-    color: #ffffff;
-    font-size: 1.1rem;
-}
+    .professional-name {
+        font-weight: 600;
+        color: #ffffff;
+        font-size: 1.1rem;
+    }
 
-.occupation {
-    font-style: italic;
-    color: #fdfdfd;
-}
+    .occupation {
+        font-style: italic;
+        color: #fdfdfd;
+    }
 
-.crp a, .email-link a {
-    color: inherit;
-    text-decoration: underline;
-    transition: opacity 0.3s;
-}
+    .crp a, .email-link a {
+        color: inherit;
+        text-decoration: underline;
+        transition: opacity 0.3s;
+    }
 
-.crp a:hover, .email-link a:hover {
-    opacity: 0.7;
-}
+    .crp a:hover, .email-link a:hover {
+        opacity: 0.5;
+    }
 
-/* Estilo dos Ícones de Ação */
-.icon-group {
-    display: flex;
-    gap: 25px;
-    align-items: center;
-    margin-top: 15px;
-    
-}
+    /* Estilo dos Ícones de Ação */
+    .icon-group {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+        margin-top: 15px;
+        
+    }
 
-.icon-group a {
-    color: #ffffff;
-    font-size: 2rem; /* Ícones maiores e mais nítidos */
-    transition: color 0.3s, transform 0.3s;
-}
+    .icon-group a {
+        color: #ffffff;
+        font-size: 2rem; /* Ícones maiores e mais nítidos */
+        transition: color 0.3s, transform 0.3s;
+    }
 
-.icon-group a:hover {
-    color: #E2725B; /* Terracota no hover */
-    transform: translateY(-3px);
-}
+    .icon-group a:hover {
+        color: #a874e4; /*  hover */
+        transform: translateY(-3px);
+    }
 
-/* Destaque especial para o ícone do Gmail (conforme imagem) */
-.highlight-icon {
-    position: relative;
-}
+    /* Destaque especial para o ícone do Gmail (conforme imagem) */
+    .highlight-icon {
+        position: relative;
+    }
 
-.highlight-icon i {
-    color: #ffffff; /* Terracota base */
-}
+    .highlight-icon i {
+        color: #ffffff; 
+    }
 
-/* Faixa Inferior */
-.footer-bottom {
-    margin-top: 50px;
-    padding-top: 20px;
-    border-top: 1px solid #D1D1D1;
-    font-size: 0.85rem;
-    color: #ffffff;
-}
+    .highlight-icon i:hover {
+        color: #a874e4; 
+    }
 
-.footer-bottom .footer-container {
-    justify-content: space-between;
-    align-items: center;
-}
+    /* Faixa Inferior */
+    .footer-bottom {
+        margin-top: 50px;
+        padding-top: 20px;
+        border-top: 1px solid #D1D1D1;
+        font-size: 0.85rem;
+        color: #ffffff;
+    }
 
-.dev-link {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: opacity 0.3s;
-}
+    .footer-bottom .footer-container {
+        justify-content: space-between;
+        align-items: center;
+    }
 
-.dev-link:hover {
-    opacity: 0.8;
-    text-decoration: underline;
-}
+    .dev-link {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: opacity 0.3s;
+    }
+
+    .dev-link:hover {
+        opacity: 0.8;
+        color:#a874e4
+    }
 
 /* Responsividade para Telas Pequenas */
 @media (max-width: 768px) {
@@ -281,175 +285,183 @@
         gap: 10px;
     }
 }
-/* Seção Base */
-.formacoes {
-    padding: 60px 20px;
-    background-color: #ffffff; /* Fundo limpo */
-    text-align: center;
-}
+    /* Seção Base */
+    .formacoes {
+        padding: 60px 20px;
+        background-color: #ffffff; /* Fundo limpo */
+        text-align: center;
+    }
 
-.formacoes h2 {
-    font-family: 'Playfair Display', serif;
-    color: #4A4A4A;
-    margin-bottom: 20px;
-}
+    .formacoes h2 {
+        font-family: 'Playfair Display', serif;
+        color: #4A4A4A;
+        margin-bottom: 20px;
+    }
 
-.formacoes-intro {
-    max-width: 800px;
-    margin: 0 auto 40px auto;
-    color: #555;
-    line-height: 1.6;
-}
+    .formacoes-intro {
+        max-width: 800px;
+        margin: 0 auto 40px auto;
+        color: #555;
+        line-height: 1.6;
+    }
 
-/* Grid Responsivo para os Cards */
-.sobre-grid {
-    display: grid;
-    /* Cria colunas automáticas que não ficam menores que 250px */
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
+    /* Grid Responsivo para os Cards */
+    .sobre-grid {
+        display: grid;
+        /* Cria colunas automáticas que não ficam menores que 250px */
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 30px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
 
-/* O Card Base */
-.card-formacao {
-    background: #FDFBF9; /* Cor off-white suave */
-    padding: 30px 20px;
-    border-radius: 12px;
-    border: 1px solid #EAEAEA;
-    transition: all 0.4s ease; /* Esta linha é o segredo da animação suave */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
+    /* O Card Base */
+    .card-formacao {
+        background: #FDFBF9; /* Cor off-white suave */
+        padding: 30px 20px;
+        border-radius: 12px;
+        border: 1px solid #EAEAEA;
+        transition: all 0.4s ease; /* Esta linha é o segredo da animação suave */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-/* O Efeito Hover (Dinâmico) */
-.card-formacao:hover {
-    transform: translateY(-10px); /* Faz o card subir 10px */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08); /* Cria uma sombra suave embaixo */
-    border-color: #5C407C; /* Borda muda para o tom terracota */
-}
+    /* O Efeito Hover (Dinâmico) */
+    .card-formacao:hover {
+        transform: translateY(-10px); /* Faz o card subir 10px */
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08); /* Cria uma sombra suave embaixo */
+        border-color: #5C407C; /* Borda muda para o tom terracota */
+    }
 
-/* Estilização dos Ícones */
-.icone-wrapper {
-    background-color: #FFF2EF; /* Fundo suave para o ícone */
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
-    transition: all 0.4s ease;
-}
+    /* Estilização dos Ícones */
+    .icone-wrapper {
+        background-color: #FFF2EF; /* Fundo suave para o ícone */
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+        transition: all 0.4s ease;
+    }
 
-.icone {
-    font-size: 1.8rem;
-    color: #5C407C; /* Cor base do ícone */
-    transition: transform 0.4s ease;
-}
+    .icone {
+        font-size: 1.8rem;
+        color: #5C407C; /* Cor base do ícone */
+        transition: transform 0.4s ease;
+    }
 
-/* Animação extra no ícone quando passa o mouse no card */
-.card-formacao:hover .icone-wrapper {
-    background-color: #5C407C;
-}
+    /* Animação extra no ícone quando passa o mouse no card */
+    .card-formacao:hover .icone-wrapper {
+        background-color: #5C407C;
+    }
 
-.card-formacao:hover .icone {
-    color: #ffffff; /* Ícone fica branco */
-    transform: scale(1.1); /* Ícone cresce um pouquinho */
-}
+    .card-formacao:hover .icone {
+        color: #ffffff; /* Ícone fica branco */
+        transform: scale(1.1); /* Ícone cresce um pouquinho */
+    }
 
-/* Títulos e Textos dos Cards */
-.card-formacao h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: #333;
-}
+    /* Títulos e Textos dos Cards */
+    .card-formacao h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #333;
+    }
 
-.card-formacao p {
-    font-size: 0.9rem;
-    color: #666;
-    line-height: 1.5;
-    margin: 0;
-}
+    .card-formacao p {
+        font-size: 0.9rem;
+        color: #666;
+        line-height: 1.5;
+        margin: 0;
+    }
 
-/* Ajuste do Link CRP */
-.crp a {
-    color: #5C407C;
-    text-decoration: none;
-    font-weight: bold;
-    transition: opacity 0.3s;
-}
+    /* Ajuste do Link CRP */
+    .crp a {
+        color: #5C407C;
+        text-decoration: none;
+        font-weight: bold;
+        transition: opacity 0.3s;
+    }
+            
+    .crp1 a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: opacity 0.3s;
+    }
+
+    .crp a:hover {
+        text-decoration: underline;
+        opacity: 0.8;
+    }
+
+    .crp1 a:hover {
+        text-decoration: underline;
+        opacity: 0.8;
+    }
+    /* Container principal do menu */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        background-color: #ffffff; /* Fundo do menu */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sombrinha leve */
+        position: relative; /* Importante para o dropdown mobile */
+        z-index: 1000;
+    }
+
+    .nav-logo {
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: #333;
+    }
+
+    /* Links no Desktop */
+    .nav-links {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #555;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: #E2725B; /* Cor terracota ao passar o mouse */
+    }
+
+    /* Botão Hambúrguer (Escondido no Desktop) */
+    .menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+    }
+
+    .menu-toggle .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+
+    .poltroninha { 
+        width: 15%;
+        display: block;
+        margin: 0 auto 20px auto; /* O '20px' dá um respiro entre a imagem e o título */
+        max-width: 150px; /* Opcional: Ajuste este valor para controlar o tamanho máximo da imagem */
         
-.crp1 a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: opacity 0.3s;
-}
-
-.crp a:hover {
-    text-decoration: underline;
-    opacity: 0.8;
-}
-
-.crp1 a:hover {
-    text-decoration: underline;
-    opacity: 0.8;
-}
-/* Container principal do menu */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: #ffffff; /* Fundo do menu */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sombrinha leve */
-    position: relative; /* Importante para o dropdown mobile */
-    z-index: 1000;
-}
-
-.nav-logo {
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: #333;
-}
-
-/* Links no Desktop */
-.nav-links {
-    display: flex;
-    gap: 25px;
-    align-items: center;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #555;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: #E2725B; /* Cor terracota ao passar o mouse */
-}
-
-/* Botão Hambúrguer (Escondido no Desktop) */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-}
-
-.menu-toggle .bar {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    border-radius: 3px;
-    transition: all 0.3s ease;
-}
+    }
 
 /* ------------------------------------------- */
 /* RESPONSIVO (Telas de celular) */
@@ -496,6 +508,7 @@
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+    
     </style>
 </head>
 
@@ -530,12 +543,13 @@
 
     <section id="inicio" class="hero">
         <div class="hero-text">
+            <img class="poltroninha" src="poltroninha.png" alt="Foto da poltrona de atendimento">
             <h1>Giovana Andretto Camargo</h1>
             <p class="subtitulo">Psicóloga para Mulheres</p>
             <p class="crp">
             <a href="https://cadastro.cfp.org.br/visualizar.html?profissional=IrW31Pi5f2mBhBVdYEThYZE%2BXUewgKfSVijEOlYJjns%3D" target="_blank" id="crp-link" style="color: inherit; text-decoration: underline;">CRP: 08/45986</a>
             </p>
-            <p>Um espaço seguro para promover autonomia, emancipação e cuidado para mulheres sobrecarregadas.</p>
+            <p>Um espaço seguro para promover autonomia, emancipação e cuidado para mulheres.</p>
             <a href="https://api.whatsapp.com/send/?phone=%2B5544991295286&text=Ol%C3%A1+Giovana%2C+gostaria+de+saber+mais+sobre+os+seus+atedimentos.&type=phone_number&app_absent=0" class="btn" target="_blank"><i class="bi bi-whatsapp"></i> Agendar Consulta</a>
         </div>
         <div class="hero-image">
@@ -546,7 +560,7 @@
     <section id="sobre" class="sobre-container">
 
 <div class="sobre-imagem">
-        <img src="poltroninha.jpg" alt="Foto da poltrona de atendimento">
+        <img src="Gostaria de usar essa.jpg" alt="Foto da poltrona de atendimento">
     </div>
 
     <div class="sobre-texto">
@@ -656,7 +670,7 @@
     <section id="sobre" class="sobre-container">
 
 <div class="sobre-imagem">
-        <img src="sofa.jpg" alt="Foto da poltrona de atendimento">
+        <img src="sofa.png" alt="Foto da poltrona de atendimento">
     </div>
 
     <div class="sobre-texto">
